@@ -1,14 +1,14 @@
-<script setup>
-const { data: users } = await useFetch('/api/users')
-</script>
-
 <template>
-    <div>
-        <h1>List users</h1>
+    <div class="p-10">
+        <h1 class="text-4xl font-medium pb-4">Daftar Post</h1>
         <ul>
-            <li v-for="user in users" :key="user.id">
-                {{ user.name }}
+            <li v-for="post in posts" :key="post.id">
+                {{ post.title }}
             </li>
         </ul>
     </div>
 </template>
+
+<script setup>
+const { data: posts } = await useFetch("https://jsonplaceholder.typicode.com/posts");
+</script>
